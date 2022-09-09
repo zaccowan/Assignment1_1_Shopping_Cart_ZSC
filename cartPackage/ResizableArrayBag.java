@@ -10,7 +10,7 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
 {
 	private T[] bag; // Cannot be final due to doubling
 	private int numberOfEntries;
-   private boolean integrityOK = false;
+    private boolean integrityOK = false;
 	private static final int DEFAULT_CAPACITY = 25; // Initial capacity of bag
 	private static final int MAX_CAPACITY = 10000;
 
@@ -148,10 +148,11 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       return anEntry.equals(result);
 	} // end remove
    
- 	// Locates a given entry within the array bag.
-	// Returns the index of the entry, if located,
-	// or -1 otherwise.
-   // Precondition: checkintegrity has been called.
+ 	/**Locates a given entry within the array bag.
+ 	 * Returns the index of the entry, if located, or -1 otherwise.
+    * @param anEntry
+    * @return index of entry
+    */
 	private int getIndexOf(T anEntry)
 	{
 		int where = -1;
@@ -174,14 +175,21 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
 		return where;
 	} // end getIndexOf
    
+	/**
+	 * Method for getting an object out of the bag.
+	 * @param index
+	 * @return Item in array
+	 */
 	public T getItemAtIndex( int index) {
 		return bag[index];
 	}
 	
-   // Removes and returns the entry at a given index within the array.
-   // If no such entry exists, returns null.
-   // Precondition: 0 <= givenIndex < numberOfEntries.
-   // Precondition: checkintegrity has been called.
+	
+	/**
+	 * Removes and returns the entry at a given index within the array.
+	 * @param givenIndex
+	 * @return The removed entry or null if no entry
+	 */
 	private T removeEntry(int givenIndex)
 	{
 		T result = null;
@@ -198,14 +206,18 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       return result;
 	} // end removeEntry
    
-   // Returns true if the array bag is full, or false if not.
+	/**
+	 * Test if the array is full.
+	 * @return True if the array bag is full, or false if not.
+	 */
 	private boolean isArrayFull()
 	{
 		return numberOfEntries >= bag.length;
 	} // end isArrayFull
    
-   // Doubles the size of the array bag.
-   // Precondition: checkInitialization has been called.
+	/**
+	 * Doubles the size of the array bag.
+	 */
 	private void doubleCapacity()
 	{
       int newLength = 2 * bag.length;
@@ -213,13 +225,17 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
       bag = Arrays.copyOf(bag, newLength);
 	} // end doubleCapacity
    
-   // Throws an exception if the client requests a capacity that is too large.
-   private void checkCapacity(int capacity)
-   {
-      if (capacity > MAX_CAPACITY)
-         throw new IllegalStateException("Attempt to create a bag whose capacity exceeds " +
-                                         "allowed maximum of " + MAX_CAPACITY);
-   } // end checkCapacity
+	
+   /**
+    * Check the capacity and make sure a bag does not exceed max capacity
+    * @param capacity
+    */
+	private void checkCapacity(int capacity)
+	{
+		if (capacity > MAX_CAPACITY)
+			throw new IllegalStateException("Attempt to create a bag whose capacity exceeds " +
+					"allowed maximum of " + MAX_CAPACITY);
+	} // end checkCapacity
    
    // Throws an exception if receiving object is not initialized.
    private void checkintegrity()

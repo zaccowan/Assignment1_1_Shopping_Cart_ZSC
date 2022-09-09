@@ -156,7 +156,7 @@ public class ShoppingCart<T> implements ShoppingCartInterface<T> {
 	public String toString() {
 		String items = "";
 		for( int index = 0 ; index < cart.getCurrentSize()-1 ; index++ ) {
-			items += "\t" + cart.getItemAtIndex(index) + ",\n";
+			items += "-------\t" + cart.getItemAtIndex(index) + ",\n";
 		}
 		return "Total Price: " + getCartPrice() + "\nItems in cart:\n" + items;
 	}

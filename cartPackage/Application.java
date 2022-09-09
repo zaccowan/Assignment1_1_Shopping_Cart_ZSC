@@ -27,5 +27,6 @@ public class Application {
 		System.out.println("Price of chips: \t" + myItemCart.getPriceOfItemGroup(chips));
 		System.out.println();
 		System.out.println(myItemCart.toString());
+		System.out.println(myItemCart.toArray()[0].toString());
 	}
 }
