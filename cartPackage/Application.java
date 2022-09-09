@@ -19,9 +19,13 @@ public class Application {
 		ShoppingCart<Item> myItemCart = new ShoppingCart<Item>();
 		
 		Item apple = new Item("Apple", 1.99, "Tasty and sweet.");
+		Item chips = new Item("Chips", 2.99, "Salty, very salty.");
 		myItemCart.addItemToCart(apple, 3);
+		myItemCart.addItemToCart(chips, 4);
 		System.out.println(myItemCart.getCartPrice());
-		System.out.println(myItemCart.getPriceOfItemGroup(apple));
+		System.out.println("Price of apples: \t" + myItemCart.getPriceOfItemGroup(apple));
+		System.out.println("Price of chips: \t" + myItemCart.getPriceOfItemGroup(chips));
+		System.out.println();
 		System.out.println(myItemCart.toString());
 	}
 }

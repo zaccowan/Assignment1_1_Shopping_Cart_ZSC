@@ -50,7 +50,7 @@ public class Item implements ItemInterface {
 	}
 	
 	public String toString() {
-		return "Item Name: " + getItemName();
+		return getItemName();
 	}
 
 }
