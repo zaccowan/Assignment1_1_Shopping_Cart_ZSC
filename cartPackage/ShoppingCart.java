@@ -6,6 +6,7 @@ package cartPackage;
  * @author zaccowan
  * @version 9/9/22
  * @param <T>
+ * Fall/2022
  */
 public class ShoppingCart<T> implements ShoppingCartInterface<T> {
 
@@ -16,8 +17,16 @@ public class ShoppingCart<T> implements ShoppingCartInterface<T> {
 	 */
 	private ResizableArrayBag<T> cart = new ResizableArrayBag<T>();
 	
+	
+	/**
+	 * Default Constructor
+	 */
 	public ShoppingCart() {
 		cart = new ResizableArrayBag<T>();
+	}
+	
+	public ShoppingCart(T entry) {
+		addItemToCart(entry);
 	}
 
 	

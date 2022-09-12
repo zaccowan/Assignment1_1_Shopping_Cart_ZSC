@@ -1,5 +1,12 @@
 package cartPackage;
 
+/**
+ * Interface defining the methods of an Item.
+ * Item objects work with ShoppingCart class.
+ * @author zaccowan
+ * @version 9/9/22
+ * Fall/2022
+ */
 public class Item implements ItemInterface {
 
 	private String itemName = "";

@@ -2,7 +2,7 @@ package cartPackage;
 /**
 * Interface that describes the operations of a shopping cart.
 *
-* @author Zachary Cowan
+* @author zaccowan
 * @version 9/1/2022
 * Fall/2022
 */
