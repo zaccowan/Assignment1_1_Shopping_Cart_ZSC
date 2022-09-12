@@ -23,14 +23,19 @@ public class Application {
 		System.out.println("\n------ Item Cart Testing ------");
 		Item apple = new Item("Apple", 1.99, "Tasty and sweet.");
 		Item chips = new Item("Chips", 2.99, "Salty, very salty.");
-		ShoppingCart<Item> myItemCart = new ShoppingCart<Item>(apple);
-
+		ShoppingCart<Item> myItemCart = new ShoppingCart<Item>(apple); //new shopping cart with apple in the bag
+		System.out.println(myItemCart.getCartSize());
+		System.out.println(myItemCart.isEmpty());
+		myItemCart.addItemToCart(apple);
 		myItemCart.addItemToCart(chips, 4);
-		System.out.println(myItemCart.getCartPrice());
+		System.out.println("number of chips:\t" + myItemCart.getNumberOfItem(chips));
+		myItemCart.removeLastAddedItem();
+		System.out.println("Cart Price:\t"  + myItemCart.getCartPrice());
 		System.out.println("Price of apples: \t" + myItemCart.getPriceOfItemGroup(apple));
 		System.out.println("Price of chips: \t" + myItemCart.getPriceOfItemGroup(chips));
-		System.out.println();
+		System.out.println("Chips currently in cart?\t" + myItemCart.checkCartForItem(chips));
 		System.out.println(myItemCart.toString());
-		System.out.println(myItemCart.toArray()[0].toString());
+		myItemCart.clearCart();
+		System.out.println(myItemCart.toString());
 	}
 }

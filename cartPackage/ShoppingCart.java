@@ -16,6 +16,8 @@ public class ShoppingCart<T> implements ShoppingCartInterface<T> {
 	 * @param T Type to store
 	 */
 	private ResizableArrayBag<T> cart = new ResizableArrayBag<T>();
+	//For formatting price
+	
 	
 	
 	/**
