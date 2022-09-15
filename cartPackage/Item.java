@@ -1,5 +1,7 @@
 package cartPackage;
 
+import java.text.DecimalFormat;
+
 /**
  * Interface defining the methods of an Item.
  * Item objects work with ShoppingCart class.
@@ -12,6 +14,8 @@ public class Item implements ItemInterface {
 	private String itemName = "";
 	private double itemPrice = 0.0;
 	private String itemDescription = "";
+	
+	DecimalFormat df = new DecimalFormat(".##");
 	
 	/**
 	 * Constructor

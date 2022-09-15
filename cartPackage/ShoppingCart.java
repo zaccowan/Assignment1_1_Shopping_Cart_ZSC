@@ -1,5 +1,7 @@
 package cartPackage;
 
+import java.text.DecimalFormat;
+
 /**
  * Shopping cart class for shopping cart operations and management. Uses ResizableArrayBag to store items.
  * Works with classes implementing ItemInterface.
@@ -9,6 +11,8 @@ package cartPackage;
  * Fall/2022
  */
 public class ShoppingCart<T> implements ShoppingCartInterface<T> {
+	
+	DecimalFormat df = new DecimalFormat(".##");
 
 	
 	/**
@@ -169,7 +173,7 @@ public class ShoppingCart<T> implements ShoppingCartInterface<T> {
 		for( int index = 0 ; index < cart.getCurrentSize()-1 ; index++ ) {
 			items += "-------\t" + cart.getItemAtIndex(index) + ",\n";
 		}
-		return "Total Price: " + getCartPrice() + "\nItems in cart:\n" + items;
+		return "Total Price: " + df.format(getCartPrice()) + "\nItems in cart:\n" + items;
 	}
 
 	
