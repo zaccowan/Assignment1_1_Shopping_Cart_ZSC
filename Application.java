@@ -1,4 +1,4 @@
-package cartPackage;
+
 
 /**
  * @author zaccowan
@@ -8,16 +8,16 @@ package cartPackage;
 public class Application {
 	public static void main(String [] args) {
 		
-//		System.out.println("------ String Cart Testing ------");
-//		ShoppingCart<String> myStringCart = new ShoppingCart<String>();
-//		
-//		myStringCart.addItemToCart("Apple");
-//		myStringCart.addItemToCart("Grape");
-//		System.out.println(myStringCart.isEmpty());
-//		myStringCart.clearCart();
-//		System.out.println(myStringCart.getCartSize());
-//		myStringCart.removeLastAddedItem();
-//		System.out.println(myStringCart.getCartSize());
+		System.out.println("------ String Cart Testing ------");
+		ShoppingCart<String> myStringCart = new ShoppingCart<String>();
+		
+		myStringCart.addItemToCart("Apple");
+		myStringCart.addItemToCart("Grape");
+		System.out.println(myStringCart.isEmpty());
+		myStringCart.clearCart();
+		System.out.println(myStringCart.getCartSize());
+		myStringCart.removeLastAddedItem();
+		System.out.println(myStringCart.getCartSize());
 		
 		
 		System.out.println("\n------ Item Cart Testing ------");

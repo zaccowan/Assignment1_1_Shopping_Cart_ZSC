@@ -1,4 +1,4 @@
-package cartPackage;
+
 /**
 * Interface that describes the operations of a shopping cart.
 *

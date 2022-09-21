@@ -1,4 +1,4 @@
-package cartPackage;
+
 /**
    An interface that describes the operations of a bag of objects.
    @author Frank M. Carrano
